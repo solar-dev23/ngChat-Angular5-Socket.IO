@@ -1,0 +1,29 @@
+@import "~@progress/kendo-theme-default/scss/all";
+
+.sidebar-wrapper {
+	background: $accent;
+	width: 250px;
+	position: relative;
+	height: 100%;
+	color: white;
+
+	.channels {
+		.channel-label {
+			padding-left: 1em;
+		}
+
+		ul {
+			list-style: none;
+			padding-left: 0;
+
+			li {
+				padding: .5em 1em;
+			}
+
+			li.active, li:hover {
+				background-color: lighten( $accent, 5% );
+				cursor: pointer;
+			}
+		}
+	} 
+}

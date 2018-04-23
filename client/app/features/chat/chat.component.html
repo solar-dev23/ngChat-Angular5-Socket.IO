@@ -1,0 +1,16 @@
+<div class="chat-container d-flex flex-column justify-content-between">
+	<div class="chat p-2" ngx-auto-scroll>
+		<div class="messages">
+			<div *ngFor="let message of messages" class="message">
+				<span class="username"><b>{{message.username}}</b></span>
+				<span class="time"><i>{{message.time | date:'yyyy-MM-dd HH:mm a'}}</i></span>
+				<span class="content">{{message.content}}</span>
+			</div>
+		</div>
+		<span *ngIf="typingUser" class="typing">{{typingUser}} is typing...</span>
+	</div>
+	<div class="chat-send-box">
+		<textarea class="input-message k-textarea" placeholder="Enter a new message" [(ngModel)]="content" (keydown.enter)="send($event)" (ngModelChange)="typing($event)" (keyup)="typing($event)"></textarea>
+		<button class="send-message k-button k-primary" (click)="send($event)">Send</button>
+	</div>	
+</div>

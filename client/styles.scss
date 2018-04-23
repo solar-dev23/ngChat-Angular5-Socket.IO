@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@progress/kendo-theme-default/scss/all";
+
+html, body {
+  height: 100%;
+}
+
+a {
+	cursor: pointer;
+	color: $accent !important;
+}
+
+a:hover {
+	text-decoration: underline;
+}

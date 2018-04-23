@@ -1,0 +1,43 @@
+<div class="col-sm-12 register-wrapper d-flex justify-content-center align-items-center">
+    <div class="col-xs-12 col-sm-4">
+        <div class="card w-100">
+            <div class="card-block">
+                <form class="k-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+                    <fieldset>
+                        <legend>Register</legend>
+                        <label class="k-form-field">
+                            <span>Email <span class="k-required">*</span></span>
+                            <input type="email" class="k-textbox" formControlName="email" placeholder="Email Address" />
+                            <error-label [error]="getErrorMessage('email')"></error-label>
+                        </label>
+                        <label class="k-form-field">
+                            <span>Username <span class="k-required">*</span></span>
+                            <input type="username" class="k-textbox" formControlName="username" placeholder="Username" />
+                            <error-label [error]="getErrorMessage('username')"></error-label>
+                        </label>
+                        <label class="k-form-field">
+                            <span>Password <span class="k-required">*</span></span>
+                            <input type="password" class="k-textbox" formControlName="password" placeholder="Password"/>
+                            <error-label [error]="getErrorMessage('password')"></error-label>
+                        </label>
+                        <label class="k-form-field">
+                            <span>Confirm Password <span class="k-required">*</span></span>
+                            <input type="password" class="k-textbox" formControlName="confirmPassword" placeholder="Confirm Password"/>
+                            <error-label [error]="getErrorMessage('confirm-password')"></error-label>
+                        </label>
+                    </fieldset>
+
+                    <div class="d-flex align-items-center justify-content-between">
+                      <a routerLink="/login" class="float-left">Already have an account?</a>
+                      <div class="text-right">
+                        <button [disabled]="!registerForm.valid || !isValidForm" type="submit" class="k-button k-primary">Create Account</button>
+                      </div>                      
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<alert-message *ngIf="alertMessage" [message]="alertMessage"></alert-message>
